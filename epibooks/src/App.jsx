@@ -3,7 +3,7 @@ import MyNav from "./components/MyNav"
 import MyFooter from "./components/MyFooter"
 import Welcome from "./components/Welcome"
 import AllTheBooks from "./components/AllTheBooks"
-import BookList from "./components/MyFooter"
+import BookList from "./components/BookList"
 import fantasyBooks from "./data/fantasy.json"
 
 function App() {
@@ -12,7 +12,8 @@ function App() {
       <MyNav />
       <main>
         <Welcome />
-        <AllTheBooks />
+        <AllTheBooks />  
+        {/* modifiche di oggi */}
         <BookList books={fantasyBooks} />
       </main>
       <MyFooter />
