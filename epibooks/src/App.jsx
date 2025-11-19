@@ -3,6 +3,8 @@ import MyNav from "./components/MyNav"
 import MyFooter from "./components/MyFooter"
 import Welcome from "./components/Welcome"
 import AllTheBooks from "./components/AllTheBooks"
+import BookList from "./components/MyFooter"
+import fantasyBooks from "./data/fantasy.json"
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <main>
         <Welcome />
         <AllTheBooks />
+        <BookList books={fantasyBooks} />
       </main>
       <MyFooter />
     </>
