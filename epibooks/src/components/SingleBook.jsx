@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card"
 
 class SingleBook extends Component {
   state = {
-    // di default il libro NON è selezionato
+    
     selected: false,
   }
 
-  // metodo che fa il toggle dello stato
+  
   toggleSelected = () => {
     this.setState({
       selected: !this.state.selected,
@@ -15,7 +15,7 @@ class SingleBook extends Component {
   }
 
   render() {
-    // estraggo l’oggetto libro dalle props
+   
     const { book } = this.props
     return (
       <Card

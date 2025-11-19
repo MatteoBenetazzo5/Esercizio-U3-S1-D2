@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col"
 import SingleBook from "./SingleBook"
 
 const BookList = (props) => {
-  // props.books è l’array di libri che arriva da App
+  
   return (
     <Container className="mb-5">
       <Row className="g-4">
