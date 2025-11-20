@@ -12,7 +12,7 @@ function App() {
       <MyNav />
       <main>
         <Welcome />
-        {/* <AllTheBooks />    volendo si possono togliere le parentesi per far ricomparire gli altri libri non cliccabili */}
+        {/* <AllTheBooks /> */}
         {/* modifiche di oggi */}
         <BookList books={fantasyBooks} />
       </main>

@@ -1,1 +1,15 @@
+.card-blue-border {
+  border: 3px solid #0066ff !important; 
+  border-radius: 8px; 
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1512820790803-83ca734da794");
+  background-size: cover;         
+  background-repeat: no-repeat;   
+  background-attachment: fixed;   
+  background-position: center;    
+}
+
+
 
