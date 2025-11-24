@@ -1,14 +1,15 @@
+// CommentArea.jsx
 import { Component } from "react"
 import { Spinner, Alert } from "react-bootstrap"
 import CommentsList from "./CommentsList"
 
 const AUTH_TOKEN =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTFmMTcwMjIzZTc0MDAwMTVmN2ZkY2YiLCJpYXQiOjE3NjM2NDUxODYsImV4cCI6MTc2NDg1NDc4Nn0.ol3EyfVLP3BkFOZf3wQ4P3LQmgI4PJa6gjJISCapoNA"
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTI0NGRmNmRiYzJkODAwMTVmMDAxNTgiLCJpYXQiOjE3NjM5ODY5MzUsImV4cCI6MTc2NTE5NjUzNX0.WDjGpqslR0IgFsgH1pGYtohfCRiu4SlGdlUCGEq99-8"
 
 class CommentArea extends Component {
   state = {
     comments: [],
-    loading: true,
+    loading: false,
     error: false,
   }
 
@@ -29,6 +30,7 @@ class CommentArea extends Component {
         this.setState({
           comments: commentsArray,
           loading: false,
+          error: false,
         })
       })
       .catch(() => {
@@ -36,11 +38,22 @@ class CommentArea extends Component {
       })
   }
 
-  componentDidMount() {
-    this.getComments()
+  componentDidUpdate(prevProps) {
+    if (prevProps.asin !== this.props.asin) {
+      if (this.props.asin) {
+        this.setState({ loading: true, error: false })
+        this.getComments()
+      }
+    }
   }
 
   render() {
+    if (!this.props.asin) {
+      return (
+        <Alert variant="info">Seleziona un libro per vedere i commenti</Alert>
+      )
+    }
+
     return (
       <div className="mt-2">
         {this.state.loading && (
