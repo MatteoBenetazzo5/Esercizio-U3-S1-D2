@@ -8,7 +8,7 @@ const Welcome = () => {
         <Alert.Heading>Benvenuto su EpiBooks!</Alert.Heading>
         <p>Il tuo negozio di libri preferito!!!</p>
       </Alert>
-      <h2 className="mb-5 text-white" >Nuove Offerte che ti aspettano!!!</h2>
+      <h2 className="mb-5 text-white">Nuove Offerte che ti aspettano!!!</h2>
     </Container>
   )
 }

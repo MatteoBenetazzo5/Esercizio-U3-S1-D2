@@ -1,37 +1,34 @@
-// App.jsx
 import "bootstrap/dist/css/bootstrap.min.css"
 import MyNav from "./components/MyNav"
 import MyFooter from "./components/MyFooter"
 import Welcome from "./components/Welcome"
 import BookList from "./components/BookList"
 import fantasyBooks from "./data/fantasy.json"
-import { Component } from "react"
+import { useState } from "react"
 
-class App extends Component {
-  state = {
-    selectedAsin: null,
+const App = function () {
+  // STATO con useState
+  const [selectedAsin, setSelectedAsin] = useState(null)
+
+  // funzione per aggiornare lo stato
+  const changeSelectedAsin = (asin) => {
+    setSelectedAsin(asin)
   }
 
-  changeSelectedAsin = (asin) => {
-    this.setState({ selectedAsin: asin })
-  }
-
-  render() {
-    return (
-      <>
-        <MyNav />
-        <main>
-          <Welcome />
-          <BookList
-            books={fantasyBooks}
-            selectedAsin={this.state.selectedAsin}
-            changeSelectedAsin={this.changeSelectedAsin}
-          />
-        </main>
-        <MyFooter />
-      </>
-    )
-  }
+  return (
+    <>
+      <MyNav />
+      <main>
+        <Welcome />
+        <BookList
+          books={fantasyBooks}
+          selectedAsin={selectedAsin}
+          changeSelectedAsin={changeSelectedAsin}
+        />
+      </main>
+      <MyFooter />
+    </>
+  )
 }
 
 export default App
