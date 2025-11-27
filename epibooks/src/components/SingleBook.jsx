@@ -1,20 +1,20 @@
-// TIPO DI SCRITTURA MODERNO CON useState e useEffect
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
 const SingleBook = function (props) {
   const { book } = props
-
   const isSelected = props.selectedAsin === book.asin
 
   return (
     <Card
+      data-testid="single-book-card"
       className={
         "h-100 mb-2 card-blue-border " +
         (isSelected ? "border border-danger border-3" : "")
       }
     >
       <Card.Img
+        data-testid="book-img"
         variant="top"
         src={book.img}
         onClick={() => props.changeSelectedAsin(book.asin)}

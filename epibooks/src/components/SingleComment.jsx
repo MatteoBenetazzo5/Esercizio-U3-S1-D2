@@ -2,7 +2,7 @@ import { ListGroup } from "react-bootstrap"
 
 const SingleComment = ({ comment }) => {
   return (
-    <ListGroup.Item>
+    <ListGroup.Item data-testid="single-comment">
       {comment.author} — {comment.comment} ⭐{comment.rate}
     </ListGroup.Item>
   )
